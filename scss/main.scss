@@ -154,9 +154,31 @@ footer {
   }
 
   .about,
-  .career,
-  .social_icons {
+  .career {
     padding-left: 4rem;
+  }
+
+  .social_icons {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    height: 5rem;
+    width: 12rem;
+
+    a ion-icon {
+      color: #fff;
+      padding: 0.5rem;
+      font-size: 1.5rem;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      transition: 0.6s ease-in;
+
+      &:hover {
+        color: $pink;
+        border: 2px solid $pink;
+        transition: 0.6s ease-out;
+      }
+    }
   }
 
   .about,
@@ -272,7 +294,7 @@ footer {
   }
 
   footer {
-    @include display-grid-columns(100%, 50rem, 100%, center, center, 2rem);
+    @include display-grid-columns(100%, 53rem, 100%, center, center, 2rem);
     padding: 4rem 1rem;
 
     .huddle_address {
@@ -301,6 +323,12 @@ footer {
     .career,
     .social_icons {
       padding-left: 1rem;
+    }
+
+    .social_icons {
+      width: 100%;
+      justify-content: center;
+      gap: 1rem;
     }
 
     .about,
