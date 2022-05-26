@@ -57,6 +57,8 @@ header {
 // MAIN SECTION
 main {
   padding: 5rem 6rem;
+  position: relative;
+  padding-bottom: 15rem;
 
   .flex_card {
     @include display-flex(90%, 20rem, row, space-around, center);
@@ -93,15 +95,89 @@ main {
   .flex_card:nth-child(2) {
     flex-direction: row-reverse;
   }
+  .get_started {
+    @include display-flex(50%, 15rem, column, center, center);
+    background: #fff;
+    text-align: center;
+    box-shadow: 1px 0px 10px rgba($color: #000000, $alpha: 0.1);
+    border-radius: 1rem;
+    position: absolute;
+    bottom: -4rem;
+    left: 25%;
+    z-index: 2;
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: $very-dark-cyan;
+    }
+  }
 }
 
-.attribution {
-  font-size: 11px;
-  text-align: center;
-}
+footer {
+  @include display-grid-columns(
+    100%,
+    32rem,
+    40% 20% 20% 20%,
+    center,
+    center,
+    2rem
+  );
+  background: $very-dark-cyan;
+  padding: 4rem;
+  color: #fff;
+  position: relative;
 
-.attribution a {
-  color: hsl(228, 45%, 44%);
+  .huddle_address {
+    padding: 0 2rem 0 4rem;
+
+    .logo {
+      width: 10rem;
+      margin-bottom: 1rem;
+    }
+
+    * {
+      margin-block: 1rem;
+    }
+
+    .location {
+      @include display-flex(_, inherit, row, space-between, center);
+      gap: 1.5rem;
+    }
+    .phone {
+      @include display-flex(45%, inherit, row, space-between, center);
+    }
+    .email {
+      @include display-flex(50%, inherit, row, space-between, center);
+      gap: 1.5rem;
+    }
+  }
+
+  .about,
+  .career,
+  .social_icons {
+    padding-left: 4rem;
+  }
+
+  .about,
+  .career {
+    a {
+      margin-bottom: 1.5rem;
+      color: #fff;
+      display: block;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .copyright {
+    position: absolute;
+    right: 4rem;
+    bottom: 3rem;
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 500px) {
@@ -154,6 +230,7 @@ main {
   // MAIN SECTION
   main {
     padding: 2rem;
+    padding-bottom: 14rem;
 
     .flex_card {
       @include display-flex(90%, 32rem, column-reverse, center, space-around);
@@ -179,6 +256,63 @@ main {
       &:nth-child(2) {
         flex-direction: column-reverse;
       }
+    }
+
+    .get_started {
+      @include display-flex(90%, 14rem, column, center, center);
+      padding: 2rem;
+      bottom: -4rem;
+      left: 5%;
+
+      h1 {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+
+  footer {
+    @include display-grid-columns(100%, 50rem, 100%, center, center, 2rem);
+    padding: 4rem 1rem;
+
+    .huddle_address {
+      padding: 1rem;
+      padding-right: 3rem;
+      margin-top: 2rem;
+
+      * {
+        margin-block: 0.5rem;
+      }
+
+      .location {
+        @include display-flex(_, inherit, row, space-between, center);
+        gap: 1rem;
+      }
+      .phone {
+        @include display-flex(45%, inherit, row, space-between, center);
+      }
+      .email {
+        @include display-flex(50%, inherit, row, space-between, center);
+        gap: 1rem;
+      }
+    }
+
+    .about,
+    .career,
+    .social_icons {
+      padding-left: 1rem;
+    }
+
+    .about,
+    .career {
+      a {
+        margin-bottom: 1rem;
+      }
+    }
+
+    .copyright {
+      right: 5rem;
+      bottom: 2rem;
     }
   }
 }
